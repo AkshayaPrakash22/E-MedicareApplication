@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { UpdateComponent } from 'src/update/update.component';
 
 const routes: Routes = [
     {path: "",
-    component:AdmindashboardComponent}
+    component:AdmindashboardComponent},
+    {
+      path: "update",
+      component:UpdateComponent
+    }
 ];
 
 @NgModule({

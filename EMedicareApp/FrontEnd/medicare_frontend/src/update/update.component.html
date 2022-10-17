@@ -1,0 +1,56 @@
+
+<!-- Updating the Product details -->
+<div>
+    <div class="container">
+        <div *ngIf="flag">
+            <h2>Update Product</h2>
+            <form (ngSubmit)="updateProductDetails()">
+                <label>Medicine Id</label><br />
+                <input type="number" name="medid" [(ngModel)]="medid" readonly /><br />
+                <label>Medicine name</label><br />
+                <input type="text" name="medname" [(ngModel)]="medname"/><br />
+                <label>Enter Description</label><br />
+                <input type="text" name="description" [(ngModel)]="description" /><br />
+                <label>Enter Price</label><br />
+                <input type="number" name="price" [(ngModel)]="price" /><br />
+                <label>Enter Seller</label><br />
+                <input type="text" name="seller" [(ngModel)]="seller" /><br />
+                <label>Enter Image URL</label><br />
+                <input type="text" name="medimg" [(ngModel)]="medimg" /><br />
+                <label>Enter Category Type </label><br />
+                <input type="text" name="category" [(ngModel)]="category" /><br /><br>
+                <button style="margin:5px;" type="submit" class="btn btn-primary bn">Update</button>
+                <button style="margin:5px;" type="reset" class="btn btn-primary  bn">Reset</button>
+            </form>
+        </div>
+    </div>
+    <!-- Displaying the Product Details in the table -->
+    <br>
+    <h1 style="text-align: center">Medicine Details</h1>
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th scope="col">Medicine Id</th>
+                <th scope="col">Medicine Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Seller Details</th>
+                <th scope="col">Images</th>
+                <th scope="col">Category</th>
+                <th scope="col">Update Product</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.medid}}</td>
+                <td>{{product.medname }}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.seller}}</td>
+                <td><img src='{{product.medimg}}' width="200px" heigth="200px" /> </td>
+                <td>{{product.category}}</td>
+                <td><input type="button" value="Update" class="btn btn-success" (click)="updateProduct(product)" /></td>
+            </tr>
+        </tbody>
+    </table>
+  

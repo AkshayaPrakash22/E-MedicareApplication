@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, } from '@angular/common/http'
 import { Medicine } from './medicine';
-import { map } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,20 +10,18 @@ export class MedicineService {
 
   constructor(private http: HttpClient) { }
 
-  postMedicine(data : any){
-    return this.http.post<any>("http://localhost:8080/medicine/storeMedicine", data)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+  storeMedicine(product:any):Observable<Medicine>{
+    return this.http.post<Medicine>("http://localhost:8080/medicine/storeMedicine", product)
   }
    
 
+  updateMedicine(product: any): Observable<string> {
+    return this.http.patch("http://localhost:8080/medicine/updateMedicine", product, { responseType: 'text' })
+  }
 
-  updateMedicine(data : any, medid: number){
-    return this.http.put<any>("http://localhost:8080/medicine/updateMedicine"+medid, data)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
+
+  loadProductDetails(): Observable<Medicine[]> {
+    return this.http.get<Medicine[]>("http://localhost:8080/medicine/getAllMedicines")
   }
 
 }

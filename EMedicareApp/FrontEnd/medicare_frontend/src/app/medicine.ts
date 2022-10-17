@@ -5,6 +5,6 @@ export class Medicine {
         seller : string = '';
         description : string = '';
         category : string = '';
-        url : string = '';
+        medimg : string = '';
     }
     

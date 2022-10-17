@@ -7,8 +7,9 @@ import { SignupComponent } from './signup/signup.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { UserdashbaordComponent } from './userdashbaord/userdashbaord.component';
 import { AddcartComponent } from './addcart/addcart.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateComponent } from 'src/update/update.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,15 @@ import { HttpClientModule } from '@angular/common/http';
     SignupComponent,
     AdmindashboardComponent,
     UserdashbaordComponent,
-    AddcartComponent
+    AddcartComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

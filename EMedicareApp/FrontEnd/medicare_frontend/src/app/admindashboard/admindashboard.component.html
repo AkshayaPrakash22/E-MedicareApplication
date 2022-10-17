@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-primary">
-  <div class="container-fluid">
+  <div class="container">
     <h1 style="color: white">Admin Dashboard</h1>
     <div class="d-fles">
       <button
@@ -11,136 +11,117 @@
       >
         Add Medicine
       </button>
+      
       <button
-      (click)="clickAddMedicine()"
+        (click)="clickShowMedicine()"
         type="button"
-        data-toggle="modal"
-        data-target="#exampleModal"
         class="btn btn-success"
       >
-        Update Medicine
+        Edit Medicine
       </button>
     </div>
-      
-    </div>
+  </div>
 </nav>
 
 <!-- Modal -->
 <div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Medicine Details</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Medicine Details</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       <div class="modal-body">
-        <form [formGroup]="formValue">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Medicine Id</label>
-            <input
-              type="number"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              formControlName="medid"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="exampleInputPassword1">Medicine Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputPassword1"
-              formControlName="medname"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="exampleInputPassword1">Price</label>
-            <input
-              type="number"
-              class="form-control"
-              id="exampleInputPassword1"
-              formControlName="price"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="exampleInputPassword1">Description</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputPassword1"
-              formControlName="description"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="exampleInputPassword1">Seller</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputPassword1"
-              formControlName="seller"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="exampleInputPassword1">Category</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputPassword1"
-              formControlName="category"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="exampleInputPassword1">url</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputPassword1"
-              formControlName="url"
-            />
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          id="cancel"
-          class="btn btn-secondary"
-          data-dismiss="modal"
-        >
-          Close
-        </button>
-        <button
-          type="button"
-          (click)="postMedicineDetails()"
-          class="btn btn-primary"
-          *ngIf="showAdd"
-        >
-          Add
-        </button>
-
-      </div>
+     <form [formGroup]="productRef" (ngSubmit)="storeProduct()">
+      <div class="form-group">
+      <label for="exampleInputEmail1">Medicine Id</label>
+      <input
+        type="number"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="medid"
+      />
     </div>
-  </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Medicine Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        formControlName="medname"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Price</label>
+      <input
+        type="number"
+        class="form-control"
+        id="exampleInputPassword1"
+        formControlName="price"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        formControlName="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Seller</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        formControlName="seller"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Category</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        formControlName="category"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Image URL</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        formControlName="medimg"
+      />
+    </div>
+    <input
+            type="submit"
+            value="Add Medicine" 
+            class="btn btn-success"
+            *ngIf="showAdd"
+          >
+        </form>
+</div>
+</div>
 </div>

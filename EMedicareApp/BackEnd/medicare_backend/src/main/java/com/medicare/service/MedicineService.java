@@ -1,5 +1,7 @@
 package com.medicare.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +39,14 @@ public class MedicineService {
 			return "No Medicine Found";
 		}
 	}
+	
+	public List<Medicine> getAllMedicines() {
+		return medicineRepository.findAll();
+	}
+	
+
+	
+
 
 
 }

@@ -1,0 +1,57 @@
+h1{
+    color:rgb(169, 35, 35);
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Edu QLD Beginner';
+    
+  }
+  h2{
+    color:rgb(226, 7, 7);
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Edu QLD Beginner';
+  }
+  label{
+    color: black;
+    font-size:15px ;
+    text-align: center;
+  
+    }
+    h1{
+      flex: 1 1 auto;
+      margin: auto;
+     width: 400px;
+      text-align: center;
+      font-size: 50px;
+      display: flex;
+      align-items: center;
+         
+  }
+  table, th,td {
+          border: 1px solid rosybrown;
+          margin-left: 0.5%;
+          margin-right:50%; 
+
+        }
+  
+    .container{
+      margin-top: 10px;
+      text-align: center;
+      align-items: center;
+     background-color: rgb(136, 174, 209);
+     border-style: outset;
+     width: 500px;
+     border:rgb(14, 13, 13);
+  
+            } 
+  
+    .bn{
+      background-color: black;
+      color: white;
+    }        
+  
+    .bn:hover{
+      background-color: white;
+      color: black;
+    }
+  
