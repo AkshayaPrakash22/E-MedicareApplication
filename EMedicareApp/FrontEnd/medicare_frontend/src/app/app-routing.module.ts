@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
-import { UpdateComponent } from 'src/update/update.component';
+import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
     {path: "",

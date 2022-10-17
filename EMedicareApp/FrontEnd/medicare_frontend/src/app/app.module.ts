@@ -9,7 +9,7 @@ import { UserdashbaordComponent } from './userdashbaord/userdashbaord.component'
 import { AddcartComponent } from './addcart/addcart.component';
 import {  ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { UpdateComponent } from 'src/update/update.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
